@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"> <!-- Character encoding for the page -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Make page responsive on mobile -->
+<title>Orryx Intelligence Bureau - Secure Login</title> <!-- Page title shown in browser tab -->
+
+<style>
+  /* =========================
+     GENERAL PAGE STYLING
+  ========================= */
+  body {
+    background-color: #0a0a0a;   /* Dark background for a “terminal” feel */
+    color: #00ffcc;              /* Neon green text color */
+    font-family: 'Courier New', monospace; /* Monospace font for a hacker/terminal style */
+    text-align: center;          /* Center all elements horizontally */
+    padding-top: 100px;          /* Push content down from top of page */
+  }
+
+  img {
+    width: 400px;                /* Logo width */
+    margin-bottom: 20px;         /* Space below the logo */
+  }
+
+  input {
+    background-color: #111;      /* Dark input background */
+    border: 1px solid #00ffcc;   /* Neon green border */
+    color: #00ffcc;              /* Text color inside input */
+    padding: 8px;                /* Space inside input box */
+    margin: 8px;                 /* Space around input box */
+    width: 200px;                /* Fixed width for inputs */
+  }
+
+  button {
+    background-color: #00ffcc;   /* Button background */
+    border: none;                /* Remove default border */
+    color: #000;                 /* Button text color */
+    padding: 8px 16px;           /* Button padding */
+    cursor: pointer;             /* Cursor shows pointer on hover */
+    margin: 5px;                 /* Space around button */
+    font-weight: bold;           /* Bold text */
+  }
+
+  button:hover {
+    background-color: #009988;   /* Darker teal when hovered */
+  }
+
+  #forgot {
+    display: block;              /* Make it display as a block element */
+    font-size: 0.85em;           /* Smaller text size */
+    margin-top: 8px;             /* Space above the text */
+    color: #00ffcc;              /* Neon green text */
+    text-decoration: underline;  /* Underline to indicate clickable */
+    cursor: pointer;             /* Pointer cursor to indicate interactivity */
+  }
+
+  #forgot:hover {
+    color: #66fff0;              /* Lighter color on hover */
+  }
+
+  #message {
+    margin-top: 15px;            /* Space above message */
+    color: #ff4444;              /* Red text for errors */
+  }
+</style>
+</head>
+
+<body>
+
+<!-- Logo -->
+<img src="Logo.png" alt="Orryx Intelligence Bureau Logo">
+
+<!-- Page headers -->
+<h1>Orryx Intelligence Bureau</h1>
+<p>SECURE LOGIN TERMINAL</p>
+
+<!-- Username and password inputs -->
+<input type="text" id="username" placeholder="Enter your name"><br>
+<input type="password" id="password" placeholder="Enter password"><br>
+
+<!-- Login button triggers login() function -->
+<button onclick="login()">Login</button>
+
+<!-- Forgot password text triggers forgotPassword() function -->
+<span id="forgot" onclick="forgotPassword()">Forgot Password?</span>
+
+<!-- Placeholder for login messages -->
+<p id="message"></p>
+
+<script>
+/* =========================
+   LOGIN FUNCTION
+========================= */
+function login() {
+  // Get value from password input field
+  const password = document.getElementById("password").value;
+
+  // Check if entered password matches the correct one
+  if (password === "Admin1234") {  // Updated password
+    // Redirect to Google Drive folder if correct
+    window.location.href = "https://drive.google.com/drive/folders/1ndA44qM0rR9r_Oi8HN-mgsseslMmTjNP";
+  } else {
+    // Show error message if password is incorrect
+    document.getElementById("message").textContent = "Incorrect password. Access denied.";
+  }
+}
+
+/* =========================
+   FORGOT PASSWORD FUNCTION
+========================= */
+function forgotPassword() {
+  // Give a hint for the password
+  document.getElementById("message").textContent = 'Is your password "Admin1234"?'; // Updated hint
+}
+</script>
+
+</body>
+</html>
